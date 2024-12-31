@@ -1,0 +1,13 @@
+[Unit]
+Description = Сервис генерации картинок заданного размера
+After = nginx.service
+Requires = nginx.service
+
+[Service]
+User = root
+WorkingDirectory = /usr/local/projects/imageGenerator
+ExecStart = /usr/local/projects/imageGenerator/build/imageGenerator
+Restart = always
+
+[Install]
+WantedBy=multi-user.target
